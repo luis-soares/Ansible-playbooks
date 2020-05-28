@@ -1,0 +1,8 @@
+download 
+
+
+winrm set winrm/config/winrs '@{MaxShellsPerUser="50"}'
+NET USER ansible "secretpasswordhere" /ADD
+NET LOCALGROUP "administrators" "ansible" /add
+NET LOCALGROUP "WinRMRemoteWMIUsers__" "ansible" /add
+shutdown /r
